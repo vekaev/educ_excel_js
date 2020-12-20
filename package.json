@@ -4,8 +4,8 @@
   "description": "Pure JS Excel app",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack",
-    "build": "webpack --mode production",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,15 +23,28 @@
   },
   "homepage": "https://github.com/vekaev/educ_excel-course#readme",
   "private": true,
+  "browserslist": "> 0.25%, not dead",
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.2.1",
+    "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
+    "eslint": "^7.11.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-loader": "^4.0.2",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.0.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^10.0.3",
     "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.11.5"
   }
 }
