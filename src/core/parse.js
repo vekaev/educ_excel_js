@@ -3,8 +3,7 @@ export function parse(value = '') {
     try {
       return eval(value.slice(1))
     } catch (e) {
-      console.warn('hello', e.message)
-      return ''
+      console.warn('Calculation ' + e.message)
     }
   }
   return value

@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 // for remove all file from dist
@@ -44,10 +45,10 @@ module.exports = {
       '@core': path.resolve(__dirname, 'src/core')
     }// ability to make short relative path
   },
-  devtool: isDev ? 'source-map' : null,
+  devtool: isDev ? 'source-map' : false,
   devServer: {
     port: 5000,
-    hot: isDev
+    hot: isDev,
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -69,6 +70,9 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: fileName('css')
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ],
   module: {
