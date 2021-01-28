@@ -26,6 +26,7 @@
     max-width: 1000px;
     margin: 0 auto;
   }
+
   &__create {
     width: 160px;
     height: 160px;
@@ -83,5 +84,11 @@
         text-decoration: underline;
       }
     }
+  }
+
+  &__empty-table {
+    font-size: 2em;
+    margin: 2em 0;
+    text-align: center;
   }
 }

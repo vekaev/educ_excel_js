@@ -39,6 +39,10 @@ export function toInlineStyles(styles = {}) {
       .join('; ')
 }
 
+export function clone(obj) {
+  return JSON.parse(JSON.stringify(obj))
+}
+
 export function debounce(fn, delay) {
   let timeout
   return function(...args) {
@@ -50,4 +54,8 @@ export function debounce(fn, delay) {
     clearTimeout(timeout)
     timeout = setTimeout(later, delay)
   }
+}
+
+export function preventDefault(event) {
+  event.preventDefault()
 }
